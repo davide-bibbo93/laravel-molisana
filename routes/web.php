@@ -140,7 +140,7 @@ Route::get('/', function () {
     ],
   ];
 
-  // stabilire var array lunghezza
+  // var array lunghezza
   $lunghe = [];
   $corte = [];
   $cortissime = [];
@@ -162,6 +162,7 @@ Route::get('/', function () {
 
   }
 
+  // funzione compact per creare un array che contiene tutte le variabili
   return view('home', compact('lunghe', 'corte', 'cortissime'));
 
 })->name('home');
@@ -293,9 +294,13 @@ Route::get('/product/{id}', function ($id) {
     ],
   ];
 
+  // var product per indicare id dell'array data
   $product = $data[$id];
+
+  // var length per contare elementi presenti nell'array data e farlo partire da -1
   $length = count($data) - 1;
 
+  // funzione compact per creare un array che contiene tutte le variabili
   return view('product', compact('product', 'id', 'length'));
 
 })->name('product');

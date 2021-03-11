@@ -1,3 +1,5 @@
+{{-- HOMEPAGE --}}
+
 @extends('layouts.main')
 
 @section('content')

@@ -1,3 +1,5 @@
+{{-- SEZIONE PRODOTTO --}}
+
 @extends('layouts.main')
 
 @section('content')
