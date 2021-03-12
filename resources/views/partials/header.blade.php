@@ -1,18 +1,25 @@
 {{-- HEADER --}}
 
-<header>
+<div class="nav-bar">
 
-  <a href="{{ route('home') }}" class="logo">
-    <img src="{{ asset('img/logo.png') }}" alt="">
-  </a>
+  <div class="logo">
+    <a href="/">
+      <img src="{{ asset('img/logo.png') }}" alt="">
+    </a>
+  </div>
 
-  <nav>
-    <li>
-        <a href="{{ route('home') }}">HOME</a>
-    </li>
-    <li>
-        <a href="{{ route('news') }}">NEWS</a>
-    </li>
-  </nav>
+  <div class="menu-list">
+    <ul>
+      <li>
+        <a href="/">HOME</a>
+      </li>
+      <li>
+        <a href="">PRODOTTI</a>
+      </li>
+      <li>
+        <a href=""> NEWS</a>
+      </li>
+    </ul>
+  </div>
 
-</header>
+</div>

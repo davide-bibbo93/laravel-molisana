@@ -1,0 +1,62 @@
+// Footer Settings
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 800px;
+  width: 100%;
+  color: #848D9B;
+  background-image: url('/img/footer-montagne-bottom.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  .box{
+    width: 33%;
+    height: 100%;
+  }
+
+  .first-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      width: 50%;
+      margin-bottom: 40px;
+    }
+  }
+
+  .second-box,.third-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ul{
+      margin:20px 50px;
+
+      li{
+        margin-bottom: 5px;
+        list-style: none;
+        cursor: pointer;
+
+        &:hover {
+          font-weight: 700;
+        }
+      }
+
+      .first{
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .third-box{
+    justify-content: flex-start;
+
+    ul{
+      margin-top: 130px;
+    }
+  }
+}

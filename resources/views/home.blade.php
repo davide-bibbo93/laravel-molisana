@@ -4,52 +4,53 @@
 
 @section('content')
 
-  <section>
+  <div class="section">
 
-    <h2>LE LUNGHE</h2>
-    <div class="cards">
-      @foreach ($lunghe as $card)
-        <div class="card">
-          <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
-          <h3>{{ $card['titolo'] }}</h3>
+    <div class="card lunga">
+      <h2>LE LUNGHE</h2>
+      @foreach ($array as $key => $value)
 
-          <a href="{{ route('product', $card['id']) }}">Vedi prodotto</a>
-        </div>
-      @endforeach
-    </div>
-
-  </section>
-
-  <section>
-
-    <h2>LE CORTE</h2>
-    <div class="cards">
-      @foreach ($corte as $card)
-        <div class="card">
-          <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
-          <h3>{{ $card['titolo'] }}</h3>
-
-          <a href="{{ route('product', $card['id']) }}">Vedi prodotto</a>
-        </div>
-      @endforeach
-    </div>
-
-  </section>
-
-  <section>
-
-    <h2>LE CORTISSIME</h2>
-    <div class="cards">
-        @foreach ($cortissime as $card)
-          <div class="card">
-            <img src="{{ $card['src'] }}" alt="{{ $card['titolo'] }}">
-            <h3>{{ $card['titolo'] }}</h3>
-
-            <a href="{{ route('product', $card['id']) }}">Vedi prodotto</a>
+        @if ($value["tipo"] == "lunga")
+          <div class="product-card">
+            <a href="/products/{{$key + 1}}">
+              <img src="{{$value["src"]}}" alt="">
+            </a>
           </div>
-        @endforeach
+        @endif
+
+      @endforeach
     </div>
 
-  </section>
+    <div class="card corta">
+      <h2>LE CORTE</h2>
+      @foreach ($array as $key => $value)
+
+        @if ($value["tipo"] == "corta")
+          <div class="product-card">
+            <a href="/products/{{$key + 1}}">
+              <img src="{{$value["src"]}}" alt="">
+            </a>
+          </div>
+        @endif
+
+      @endforeach
+    </div>
+
+    <div class="card cortissima">
+      <h2>LE CORTISSIME</h2>
+      @foreach ($array as $key => $value)
+
+        @if ($value["tipo"] == "cortissima")
+          <div class="product-card">
+            <a href="/products/{{$key + 1}}">
+              <img src="{{$value["src"]}}" alt="">
+            </a>
+          </div>
+        @endif
+
+      @endforeach
+    </div>
+
+  </div>
 
 @endsection

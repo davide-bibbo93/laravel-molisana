@@ -1,0 +1,103 @@
+// Main Settings
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: contain;
+
+  .section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-image: url('/img/fondo-pag-speciali.jpg');
+    width: 100%;
+
+    h2{
+      width: 100%;
+      margin-top: 5px;
+      padding: 5px 0px;
+      color: #002D73;
+      height: 50px;
+    }
+
+    .card{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-self: center;
+      width: 90%;
+      min-height: 600px;
+
+      .product-card{
+        width: 500px;
+        margin: 10px 10px;
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .product-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    position: relative;
+
+    .product-title{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      margin-top: 25px;
+      color: #002D73;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .arrow-left,.arrow-right{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      height: 70px;
+      width: 40px;
+      background-color: rgba($color: #fff, $alpha: 0.5);
+
+      a{
+        font-size: 50px;
+        color: #fff;
+      }
+    }
+
+    .arrow-right{
+      position: absolute;
+      right: 0%;
+    }
+
+    .arrow-left{
+      position: absolute;
+      left: 0%;
+    }
+
+    .details{
+      width: 100%;
+      min-height: 150px;
+      line-height: 25px;
+      padding: 40px 100px;
+      font-size: 18px;
+      background-color: #B8DAE4;
+      color:#002D73;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
+}

@@ -16,56 +16,23 @@ use Illuminate\Support\Facades\Route;
 // Rotta Homepage
 Route::get('/', function () {
 
-  // array pasta config
-  $data = config('pasta');
+ // prendere array pasta dalla config e passarlo alla view
+  $array = config('pasta');
 
-  // var array lunghezza
-  $lunghe = [];
-  $corte = [];
-  $cortissime = [];
-
-  // foreach per ciclare la carta pasta a seconda del tipo
-  foreach ($data as $key => $card) {
-
-    $card['id'] = $key;
-
-    if ($card['tipo'] == 'lunga') {
-      $lunghe[] = $card;
-    }
-    elseif ($card['tipo'] == 'corta') {
-      $corte[] = $card;
-    }
-    elseif ($card['tipo'] == 'cortissima') {
-      $cortissime[] = $card;
-    }
-
-  }
-
-  // funzione compact per creare un array che contiene tutte le variabili
-  return view('home', compact('lunghe', 'corte', 'cortissime'));
-
-})->name('home');
+  // il primo argomento di view è il nome del file in resources/views, il secondo è un array
+  return view('home', ['array'=> $array]);
+});
 
 // Rotta Dettaglio Prodotto
-Route::get('/product/{id}', function ($id) {
+Route::get('/products/{id?}', function($id = null) {
 
-  // array pasta config
-  $data = config('pasta');
+  if (empty($id)) {
+    return redirect('/');
+  }
 
-  // var product per indicare id dell'array data
-  $product = $data[$id];
+  // prendere array pasta dalla config e passarla alla view
+  $array = config('pasta');
 
-  // var length per contare elementi presenti nell'array data e farlo partire da -1
-  $length = count($data) - 1;
+  return view('products', ['idProduct' => $id, 'array'=> $array ]);
 
-  // funzione compact per creare un array che contiene tutte le variabili
-  return view('product', compact('product', 'id', 'length'));
-
-})->name('product');
-
-// ROtta News
-Route::get('/news', function () {
-
-  return view('news');
-
-})->name('news');
+});
