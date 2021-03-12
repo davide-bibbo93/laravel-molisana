@@ -33,6 +33,6 @@ Route::get('/products/{id?}', function($id = null) {
   // prendere array pasta dalla config e passarla alla view
   $array = config('pasta');
 
-  return view('products', ['idProduct' => $id, 'array'=> $array ]);
+  return view('products', ['idProduct' => $id, 'array'=> $array]);
 
 });
