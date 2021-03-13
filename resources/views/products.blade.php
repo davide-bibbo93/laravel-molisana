@@ -22,7 +22,9 @@
 
     <img src="{{ $array[$idProduct - 1]['src-h']}}" alt="">
     <img src="{{ $array[$idProduct - 1]['src-p']}}" alt="">
-    <span class="product-title">{{ $array[$idProduct - 1]['titolo']}}</span>
+    <span class="product-title">
+      {{ $array[$idProduct - 1]['titolo']}}
+    </span>
 
     <span class="arrow-right">
 

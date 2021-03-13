@@ -16,8 +16,8 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 200px;
   width: 100%;
+  height: 200px;
 }
 header .nav-bar {
   display: flex;
@@ -30,17 +30,17 @@ header .nav-bar .logo {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-self: center;
   width: 250px;
   height: 80%;
-  align-self: center;
 }
 header .nav-bar .logo img {
   height: 50%;
 }
 header .nav-bar .menu-list {
+  align-self: center;
   width: 300px;
   height: 25%;
-  align-self: center;
 }
 header .nav-bar .menu-list ul {
   display: flex;
@@ -49,9 +49,9 @@ header .nav-bar .menu-list ul {
   align-items: center;
   width: 100%;
   height: 100%;
-  list-style: none;
 }
 header .nav-bar .menu-list ul li {
+  list-style: none;
   padding: 15px;
 }
 header .nav-bar .menu-list ul li a {
@@ -82,10 +82,10 @@ main .section {
 }
 main .section h2 {
   width: 100%;
-  margin-top: 5px;
-  padding: 5px 0px;
-  color: #002D73;
   height: 50px;
+  margin-top: 10px;
+  padding: 5px 0;
+  color: #002D73;
 }
 main .section .card {
   display: flex;
@@ -93,7 +93,6 @@ main .section .card {
   flex-wrap: wrap;
   align-self: center;
   width: 90%;
-  min-height: 600px;
 }
 main .section .card .product-card {
   width: 500px;
@@ -115,7 +114,7 @@ main .product-container .product-title {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  margin-top: 25px;
+  margin-top: 20px;
   color: #002D73;
   font-size: 20px;
   font-weight: bold;

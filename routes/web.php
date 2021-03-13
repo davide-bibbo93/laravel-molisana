@@ -26,13 +26,17 @@ Route::get('/', function () {
 // Rotta Dettaglio Prodotto
 Route::get('/products/{id?}', function($id = null) {
 
+  // prendere array pasta dalla config e passarla alla view
+  $array = config('pasta');
+
   if (empty($id)) {
     return redirect('/');
   }
 
-  // prendere array pasta dalla config e passarla alla view
-  $array = config('pasta');
+  if ($id > count($array)) {
+    abort(404);
+  }
 
-  return view('products', ['idProduct' => $id, 'array'=> $array]);
+  return view('products', ['idProduct' => $id, 'array' => $array]);
 
 });
